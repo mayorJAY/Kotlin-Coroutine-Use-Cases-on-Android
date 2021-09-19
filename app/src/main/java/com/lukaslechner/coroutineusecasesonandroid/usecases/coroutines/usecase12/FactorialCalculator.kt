@@ -12,7 +12,7 @@ class FactorialCalculator(
         numberOfCoroutines: Int
     ): BigInteger {
 
-        return withContext(Dispatchers.Default) {
+        return withContext(defaultDispatcher) {
             val subRanges = createSubRangeList(factorialOf, numberOfCoroutines)
             subRanges.map { subRange ->
                 async {

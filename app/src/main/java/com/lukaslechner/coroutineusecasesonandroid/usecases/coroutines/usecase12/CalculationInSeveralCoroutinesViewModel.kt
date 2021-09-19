@@ -34,7 +34,7 @@ class CalculationInSeveralCoroutinesViewModel(
         }
     }
 
-    private suspend fun convertToString(number: BigInteger) = withContext(Dispatchers.Default) {
+    private suspend fun convertToString(number: BigInteger) = withContext(defaultDispatcher) {
         number.toString()
     }
 }
